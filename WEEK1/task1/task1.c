@@ -1,3 +1,5 @@
+/* Write a C code that will print your short biography. Fullname, Birth Year, Faculty and
+ Graduation year*/
 #include <stdio.h>
 int main()
 {
