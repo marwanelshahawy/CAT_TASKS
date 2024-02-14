@@ -2,21 +2,24 @@
 Hint: Fibonacci is defined as :
 f(n) = f(n - 1) + F(n - 2), f(0) = 0, f(1) = 1.*/
 #include <stdio.h>
-int Fibo(int n)
+void Fibo(int n)
 {
-   if(n==1)
-    return 1;
-    else if (n==0)
-    return 0;
-    else
-    return Fibo(n-1) + Fibo(n-2);
+  int a=0,b=1,result;
+  printf("The fibonacci series of %d \n",n);
+  for(int i=1;i<=n;i++)
+  {
+    printf("  %d  ",a);
+    result=a+b;
+    a=b;
+    b=result;
+  }
 }
 int main()
 {
     int x;
    printf("Enter the number >> ");
    scanf(" %d", &x);
-   printf("The fibonacci of %d = %d",x, Fibo(x));
+   Fibo(x);
  
 
     return 0;
