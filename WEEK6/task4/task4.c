@@ -11,7 +11,7 @@ int main()
 {
     char str[100],search;
     printf("Input string: ");
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), stdin); // I don't know how to input the string so i search how to input using fgets '_'.
     printf("Input character to search: ");
     scanf("%c",&search);
     for(int i=0;i<strlen(str);i++)
