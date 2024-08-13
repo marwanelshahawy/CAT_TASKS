@@ -1,7 +1,6 @@
-/* 2.1 Implement a function that performs binary search
-algorithm using a recursive approach.
-*/
-// Optimized implementation of Bubble sort
+/* Implement a function that takes in an array and returns
+the sorted version of this array using bubble sort
+algorithm.*/
 #include <stdbool.h>
 #include <stdio.h>
 
