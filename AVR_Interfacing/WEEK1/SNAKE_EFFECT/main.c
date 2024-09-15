@@ -5,58 +5,30 @@
  *      Author: MARWAN
  */
 #include<util/delay.h>
-typedef unsigned char u8;
+#include "stdTypes.h"
 #define DDRA *((volatile u8*)0x3A)
 #define PORTA *((volatile u8*)0x3B)
 #define PINA *((volatile u8*)0x39)
 
 int main(void)
 {
-	DDRA |=(1<<0);
-	DDRA |=(1<<1);
-	DDRA |=(1<<2);
-	DDRA |=(1<<3);
-	DDRA |=(1<<4);
-	DDRA |=(1<<5);
-	DDRA |=(1<<6);
-	DDRA |=(1<<7);
-
+	DDRA =255;
+	PORTA =0;
+	s8 i=0;
 	while(1)
 	{
 		//Turn on LEDs
-		PORTA |=(1<<0);
-		_delay_ms(50);
-		PORTA |=(1<<1);
-		_delay_ms(50);
-		PORTA |=(1<<2);
-		_delay_ms(50);
-		PORTA |=(1<<3);
-		_delay_ms(50);
-		PORTA |=(1<<4);
-		_delay_ms(50);
-		PORTA |=(1<<5);
-		_delay_ms(50);
-		PORTA |=(1<<6);
-		_delay_ms(50);
-		PORTA |=(1<<7);
-		_delay_ms(50);
+		for(i=0;i<=7;i++)
+		{
+			PORTA |=(1<<i);
+			_delay_ms(50);
+		}
 		//Turn off LEDs
-		PORTA &=~(1<<0);
-		_delay_ms(50);
-		PORTA &=~(1<<1);
-		_delay_ms(50);
-		PORTA &=~(1<<2);
-		_delay_ms(50);
-		PORTA &=~(1<<3);
-		_delay_ms(50);
-		PORTA &=~(1<<4);
-		_delay_ms(50);
-		PORTA &=~(1<<5);
-		_delay_ms(50);
-		PORTA &=~(1<<6);
-		_delay_ms(50);
-		PORTA &=~(1<<7);
-		_delay_ms(50);
+		for(i=0;i<=7;i++)
+		{
+			PORTA &=~(1<<i);
+			_delay_ms(50);
+		}
 	}
 	return 0;
 }
